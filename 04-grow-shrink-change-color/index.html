@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Grow shrink change color</title>
+		<style></style>
+	</head>
+	<body>
+		<!-- <div></div> -->
+		<script>
+			document.body.style.margin = '0px';
+			document.body.style.pading = '0px';
+			document.body.style.height = '100000px';
+
+			const square = document.createElement('div');
+			let size = 100;
+			let grow = true;
+
+			square.style.height = size + 'px';
+			square.style.backgroundColor = 'green';
+			square.style.width = '100%';
+			square.style.position = 'fixed';
+			square.style.left = '0';
+			square.style.top = '0';
+
+			document.body.appendChild(square);
+
+			const changeHeight = function () {
+				if (size >= window.innerHeight / 2) {
+					grow = false;
+				} else if (size <= 0) {
+					grow = true;
+				}
+
+				if (grow === true) {
+					size += 5;
+					square.style.height = size + 'px';
+					console.log('sdasad');
+                    square.style.backgroundColor = 'green';
+				} else {
+					size -= 5;
+					square.style.height = size + 'px';
+					console.log('DUCK');
+                    square.style.backgroundColor = 'red';
+				}
+			};
+
+			window.addEventListener('scroll', changeHeight);
+		</script>
+	</body>
+</html>
