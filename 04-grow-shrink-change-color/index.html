@@ -10,16 +10,18 @@
 	<body>
 		<!-- <div></div> -->
 		<script>
+			let size = 100;
+			let grow = true;
+            let bgColor = 'green'
+
 			document.body.style.margin = '0px';
 			document.body.style.pading = '0px';
 			document.body.style.height = '100000px';
 
 			const square = document.createElement('div');
-			let size = 100;
-			let grow = true;
 
 			square.style.height = size + 'px';
-			square.style.backgroundColor = 'green';
+			square.style.backgroundColor = bgColor;
 			square.style.width = '100%';
 			square.style.position = 'fixed';
 			square.style.left = '0';
@@ -29,22 +31,20 @@
 
 			const changeHeight = function () {
 				if (size >= window.innerHeight / 2) {
-					grow = false;
+					grow = !grow;
 				} else if (size <= 0) {
-					grow = true;
+					grow = !grow;
 				}
 
-				if (grow === true) {
+				if (grow) {
 					size += 5;
-					square.style.height = size + 'px';
-					console.log('sdasad');
-                    square.style.backgroundColor = 'green';
+                    bgColor = 'green'
 				} else {
-					size -= 5;
-					square.style.height = size + 'px';
-					console.log('DUCK');
-                    square.style.backgroundColor = 'red';
+                    size -= 5;
+					bgColor = 'red'
 				}
+                square.style.backgroundColor = bgColor;
+                square.style.height = size + 'px';
 			};
 
 			window.addEventListener('scroll', changeHeight);
