@@ -12,12 +12,12 @@ square.style.height = sqSize + 'px';
 
 window.addEventListener('scroll', function () {
 	if (sqSize >= window.innerWidth / 2) {
-		growFlag = !growFlag;
+		growFlag = false;
 	} else if (sqSize <= 0) {
-		growFlag = !growFlag;
+		growFlag = true;
 	}
 
-	if (growFlag) {
+	if (growFlag === true) {
 		sqSize += 5;
 		square.style.width = sqSize + 'px';
 		square.style.height = sqSize + 'px';
