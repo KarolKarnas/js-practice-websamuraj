@@ -17,6 +17,7 @@ div {
 .circle {
     background-color: white;
     border-radius: 50%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    outline: 1px solid black;
     color: black;
 }
