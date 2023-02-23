@@ -6,7 +6,17 @@ const input = document.querySelector("input");
 const passwords = ['jedEN', 'DwA'];
 const messages = ["super", "działa!"]
 
+
+
+const div= document.querySelector('div')
+
 const showMessage = (e) => {
+
+passwords.forEach((password, index) => {
+    if (password.toLowerCase() === e.target.value.toLowerCase()) {
+        div.innerText = messages[index];
+    }
+})
  //tutaj rozwiązanie
  // PS. nie skupiaj się na niczym innym w zadaniu niż porównanie i wyświetlenie ( nie rób czyszczenia inputa itp. nie są potrzebne, chyba że masz ochotę)
 }
