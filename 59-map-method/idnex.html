@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const arr = [1, 2, 3, 4, 5, 6];
+
+			// function addNumbersFromArray(arr) {
+			// 	let sum = 0;
+			// 	arr.map((num) => {
+			// 		sum += num;
+			// 	});
+			// 	return sum;
+			// }
+			function addNumbersFromArrayReduce(arr) {
+				// let sum = 0;
+				return arr.reduce((prev,next,) => prev + next);
+			
+			}
+
+
+
+			function addNumbersFromArray(arr) {
+				let sum = 0;
+				arr.forEach((num) => {
+					sum += num;
+				});
+				return sum;
+			}
+
+			// console.log(addNumbersFromArray(arr));
+
+			function addForOf(arr) {
+				let sum = 0;
+				for (const num of arr) {
+					sum += num;
+				}
+				return sum;
+			}
+
+			// console.log(addForOf(arr));
+
+			function addScope(a, b) {
+				let small;
+				let big;
+                let scope;
+                let sum = 0;
+				if (a > b) {
+					big = a;
+					small = b;
+				} else if (a < b) {
+					big = b;
+					small = a;
+				} else {
+					console.log('liczby so rowne');
+                    return
+				}
+scope = big - small;
+for (let i = 0; i <= scope; i++) {
+sum += small;
+small++
+}
+return sum
+
+			}
+		</script>
+	</body>
+</html>
